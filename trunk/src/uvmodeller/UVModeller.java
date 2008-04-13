@@ -9,6 +9,12 @@ import java.awt.*;
 import java.awt.event.*;
 import java.io.*;
 
+/**
+ * Note for releasing:
+ * 1) Change the version name at two places - MainComponent.setLastFileName
+ * 2) 
+ * @author Arnab
+ */
 class MainComponent extends JPanel {
     public ModelView modelView=new ModelView();
     private HelpDialog helpDialog;
@@ -80,7 +86,7 @@ class MainComponent extends JPanel {
         final String title="3D Graph Explorer";
         lastFileName=string;
         if (parentFrame!=null) {
-            if (string==null) parentFrame.setTitle(title+" v1.00a");
+            if (string==null) parentFrame.setTitle(title+" v1.01");
             else parentFrame.setTitle(title+" - "+string.substring(string.lastIndexOf(File.separatorChar)+1));
         }
     }
