@@ -13,6 +13,10 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 
+/***
+ * A simple help class made by extending the JFrame.
+ * @author Arnab
+ */
 class HelpDialog extends JFrame {
     private URL contents;
     private JEditorPane ep;

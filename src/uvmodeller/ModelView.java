@@ -480,9 +480,14 @@ public class ModelView extends JPanel implements Printable {
     }
     // class to represent a rectangle
     private class ElementRect extends Element {
-        private double shineyNess=0.25,shineIntensity=0.35;   // Todo: Make these members of the object
-        // Todo: Optional triangulation
-        // Todo: Add global controls to specify light position, color
+        //TODO: Optional triangulation
+        //TODO: Add global controls to specify light position, color
+        private double shinyNess=0.15,shineIntensity=0.5;
+        /**
+         * shinyNess: Lower values will spread out the shine
+         * shineIntensity: Maximum intensity of the shine
+         */
+        //TODO: Make the shinyness members of the object
         private Polygon s;
         private Color curveColor,surfaceColor;
         public ElementRect(Vec p1, Vec p2, Vec p3, Vec p4,Color curveColor,Color surfaceColor) {
@@ -499,13 +504,13 @@ public class ModelView extends JPanel implements Printable {
             s.addPoint((int)p3.x,-(int)p3.y);
             s.addPoint((int)p4.x,-(int)p4.y);
             this.curveColor=Utils.blendColors(curveColor,bgColor,blendAmt);
-            if (shineIntensity>0) {
+            if (shineIntensity>0 && shinyNess>0) {
                 Vec lightDirection=eyeDirection;
                 Vec normalDirection=dir1.crossProduct(dir2);
                 normalDirection=normalDirection.add(dir3.crossProduct(dir4));
                 intensity+=normalDirection.normalize().dotProduct(lightDirection);
                 intensity=Math.abs(intensity);
-                intensity=(intensity-1)/(1-shineyNess)+1;
+                intensity=(intensity-1)/(1-shinyNess)+1;
                 if (intensity<0) intensity=0; else if (intensity>1) intensity=1;
                 surfaceColor=Utils.blendColors(surfaceColor,Color.WHITE,intensity*shineIntensity);
             }
