@@ -1,0 +1,9 @@
+3D Graph Explorer / UVModeller
+Copyright (C) Arnab 2004-2009.
+
+This project is distributed with GPL v3.
+
+The license is provided with this source, please see gpl.txt
+
+A copy of the license is also available at:
+http://www.gnu.org/licenses/gpl.html
