@@ -58,9 +58,9 @@ class HelpDialog extends JFrame {
         ActionListener buttonsListener=new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 String cmd=e.getActionCommand();
-                if (cmd=="Contents") setURL(contents);
-                else if (cmd=="Back") goBack();
-                else if (cmd=="Forward") goForward();
+                if (cmd.equals("Contents")) setURL(contents);
+                else if (cmd.equals("Back")) goBack();
+                else if (cmd.equals("Forward")) goForward();
             }
         };
         final JToolBar toolBar=new JToolBar();
@@ -125,7 +125,7 @@ class Utils {
                 g.draw3DRect(x,y,width-1,height-1,m_raised);
             }
             public Insets getBorderInsets(Component c) {return new Insets(1,2,1,2);}
-        };
+        }
         final Border borderE=BorderFactory.createEmptyBorder(1,2,1,2);
         final Border borderR=new Border3D(true);
         final Border borderL=new Border3D(false);
