@@ -149,7 +149,7 @@ class MainComponent extends JPanel {
         }
     }
     private void exportPNG() {
-        String fileName=getFileName(true,".png");;
+        String fileName=getFileName(true,".png");
         if (fileName==null) return;
         try {
             modelView.saveImage(fileName);

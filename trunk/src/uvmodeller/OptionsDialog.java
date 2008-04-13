@@ -142,7 +142,7 @@ class OptionsDialog extends JFrame {
                 index=index%comboFunction.getItemCount();
                 comboFunction.setSelectedIndex(index);
             }
-        };
+        }
         btnGoLeft.addActionListener(new OnLeftRight());
         btnGoRight.addActionListener(new OnLeftRight());
         comboFunction.setEditable(true);
