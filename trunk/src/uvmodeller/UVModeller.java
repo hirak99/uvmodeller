@@ -11,8 +11,7 @@ import java.io.*;
 
 /**
  * Note for releasing:
- * 1) Change the version name at two places - MainComponent.setLastFileName
- * 2) 
+ * Change the version name at MainComponent.setLastFileName
  * @author Arnab
  */
 class MainComponent extends JPanel {
