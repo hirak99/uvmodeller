@@ -57,23 +57,23 @@ public class ModelView extends JPanel implements Printable {
         functions.clear();
         bShowAxes=false;
     }
-    // Title of the graph
+    /** Title of the graph */
     String title="";
-    // Location of the camera
+    /** Location of the camera */
     private Vec eyePosition=new Vec(0,1,-1.5);
-    // Direction of the camera
+    /** Direction of the camera */
     private Vec eyeDirection=new Vec(0,-1,1.5).normalize();
-    // The up vector
+    /** The up vector */
     private Vec up=new Vec(0,1,0);
-    // The up and right vectors for the screen, calculated from up vector
+    /** The up and right vectors for the screen, calculated from up vector */
     private Vec screenUp,screenRight;
-    // The distance of screen. Other than computations, this has no use.
+    /** The distance of screen. Other than computations, this has no use. */
     final private double screenDistance=1;
-    // Field Of Vision
+    /** Field Of Vision */
     private double fov=90;
     public double getFov() {return fov;}
     public void setFov(double fov) {this.fov=fov; recalcScale();}
-    // Should not be set. Automatic onResize depending on screenDistance and fov
+    /** Should not be set. Automatic onResize depending on screenDistance and fov */
     private double scale;
     private void recalcScale() {
         Dimension s=getSize();
@@ -81,7 +81,7 @@ public class ModelView extends JPanel implements Printable {
         double windowSize=Math.sqrt(s.height*s.height+s.width*s.width);
         scale=windowSize/(2*Math.tan((fov*Math.PI/180)/2)*screenDistance);
     }
-    // 0-Wireframe, 1-Solid, 2-Transparent (removed implementation). Mutator: setCulling()
+    /** 0-Wireframe, 1-Solid, 2-Transparent (removed implementation). Mutator: setCulling() */
     public int backCulling=0;
     /** Background color. */
     public Color bgColor=new Color(254,254,228);
@@ -89,13 +89,13 @@ public class ModelView extends JPanel implements Printable {
     public boolean fogEnabled=true;
     /** Fog parameters. */
     public double fogStart=0,fogEnd=5;
-    // Whether to draw the axes
+    /** Whether to draw the axes */
     public boolean bShowAxes=false;
-    // The parser class created by JavaCC
+    /** The parser class created by JavaCC */
     private MathParser mathParser=new MathParser();
-    // Need to smooth Keyboard Interaction
+    /** Need to smooth Keyboard Interaction */
     private Timer timer;
-    // The class (struct?) that stores the keyboard constants
+    /** The class (struct?) that stores the keyboard constants */
     private static class KeyBoard {
         // The target velocities
         private double targetForward=0;
