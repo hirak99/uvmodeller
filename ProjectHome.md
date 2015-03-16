@@ -1,0 +1,1 @@
+The program takes mathematical formula to draw surfaces or curves, and then allows you to visualize them in a 3D environment.
